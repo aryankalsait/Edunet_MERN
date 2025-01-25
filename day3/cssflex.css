@@ -1,0 +1,29 @@
+.box{
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    font-size: 5em;
+    text-align: center;
+    border-radius: 50%;
+}
+.controller{
+    display: flex;
+    
+flex-wrap: wrap;
+}
+
+
+#ni{
+    background-color: orangered;
+}
+#nu{
+    background-color: white;
+    background-image: url("Ashok.png");
+    background-size: cover;
+}
+
+
+#ne{
+    background-color: green;
+}
+

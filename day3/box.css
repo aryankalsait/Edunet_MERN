@@ -1,0 +1,10 @@
+.item{
+    height: 200px;
+    width: 200px;
+    border: 8px solid black;
+}
+.container{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    gap: 20px;
+}
