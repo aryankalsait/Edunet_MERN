@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f9;
+    }
+    .game-container {
+      text-align: center;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    .game-header {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .choices {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+    .choice {
+      font-size: 40px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .choice:hover {
+      transform: scale(1.2);
+    }
+    .result {
+      font-size: 18px;
+      color: #555;
+      margin-top: 20px;
+    }
+    .play-again {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .play-again:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <div class="game-header">Rock Paper Scissors</div>
+    <div class="choices">
+      <span class="choice" onclick="playGame('rock')">✊</span>
+      <span class="choice" onclick="playGame('paper')">✋</span>
+      <span class="choice" onclick="playGame('scissors')">✌️</span>
+    </div>
+    <div class="result" id="result">Make your choice!</div>
+    <button class="play-again" onclick="resetGame()">Play Again</button>
+  </div>
+
+  <script>
+    function playGame(playerChoice) {
+      const choices = ['rock', 'paper', 'scissors'];
+      const botChoice = choices[Math.floor(Math.random() * choices.length)];
+      const resultDiv = document.getElementById('result');
+
+      let result = '';
+      if (playerChoice === botChoice) {
+        result = `It's a tie! 🤝 You both chose ${playerChoice}.`;
+      } else if (
+        (playerChoice === 'rock' && botChoice === 'scissors') ||
+        (playerChoice === 'paper' && botChoice === 'rock') ||
+        (playerChoice === 'scissors' && botChoice === 'paper')
+      ) {
+        result = `You win! 🎉 ${playerChoice} beats ${botChoice}.`;
+      } else {
+        result = `You lose! 😢 ${botChoice} beats ${playerChoice}.`;
+      }
+
+      resultDiv.textContent = result;
+    }
+
+    function resetGame() {
+      const resultDiv = document.getElementById('result');
+      resultDiv.textContent = 'Make your choice!';
+    }
+  </script>
+</body>
+</html>

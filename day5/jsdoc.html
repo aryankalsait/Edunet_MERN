@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.button{
+    margin: 20px 0;
+}
+
+button{
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: aliceblue;
+    background-color: blue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: backgroung-color 0.3s;
+
+}
+
+button.hover{
+    background-color: blue;
+}
+#result{
+    font-size: 18px;
+    color: blueviolet;
+    margin-top: 20px;
+}
+    </style>
+    <script>
+        function calculate(){
+            const num1=parseFloat(document.getElementById("input1 ").value);
+            const num2 =parseFloat(document.getElementById("input2 ").value);
+            const resultElement=document.getElementById("result");
+            
+
+        
+
+        }
+    </script>
+</head>
+
+<body onload="onPageLode()">
+    <h1>Event handlin Example</h1>
+    <button onclick="onButtonClic()">Click me </button>
+    <p id="message"></p>
+    <script>
+        function onPageLode() {
+            console.log('page has loaded.');
+            document.getElementById('message').innerText = 'page load succesfully!';
+        }
+        function onbuttonclick() {
+            console.log('button was clicked!');
+            document.getElementById('masseg').innerText = 'button clicked';
+        }
+    </script>
+</body>
+
+</html>
